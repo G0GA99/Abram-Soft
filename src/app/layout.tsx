@@ -1,0 +1,54 @@
+import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter, Space_Grotesk } from "next/font/google";
+import type { ReactNode } from "react";
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { CustomCursor } from "@/components/custom-cursor";
+import { ScrollButton } from "@/components/scroll-button";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+// Use Cormorant Garamond for elegant, light, non-bold luxury editorial headings
+const cormorantGaramond = Cormorant_Garamond({
+  subsets: ["latin"],
+  variable: "--font-luxury",
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: "AbramSoft - Software Development & IT Solutions Company",
+  description: "A full-service digital solutions agency specializing in web development, SEO, social media marketing, and quality assurance to help businesses grow online.",
+  keywords: ["web development", "SEO", "digital marketing", "AI/ML", "software development", "IT solutions"],
+  authors: [{ name: "AbramSoft" }],
+  openGraph: {
+    title: "AbramSoft - Software Development & IT Solutions Company",
+    description: "A full-service digital solutions agency specializing in web development, SEO, and digital marketing.",
+    type: "website",
+  },
+};
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${spaceGrotesk.variable} ${cormorantGaramond.variable} font-sans`} suppressHydrationWarning>
+        <ThemeProvider>
+          {children}
+          <CustomCursor />
+          <ScrollButton />
+        </ThemeProvider>
+      </body>
+    </html>
+  );
+}

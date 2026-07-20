@@ -1,0 +1,6 @@
+{
+  "name": "AbramSoft Website",
+  "description": "Premium glassmorphic tech-agency website redesign for AbramSoft.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
