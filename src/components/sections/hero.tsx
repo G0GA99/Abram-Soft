@@ -242,7 +242,7 @@ export function Hero() {
             });
           }
         }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 rounded-full p-1"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer group focus:outline-none focus:ring-2 focus:ring-[var(--ring)] rounded-full p-1"
         aria-label="Scroll down"
       >
         <motion.div

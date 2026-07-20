@@ -61,7 +61,7 @@ export function ScrollButton() {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={handleScrollAction}
-          className="relative h-12 w-12 rounded-full glass flex items-center justify-center cursor-pointer shadow-[0_8px_32px_rgba(27,176,128,0.15)] border border-[var(--glass-border)] group focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50"
+          className="relative h-12 w-12 rounded-full glass flex items-center justify-center cursor-pointer shadow-[0_8px_32px_rgba(27,176,128,0.15)] border border-[var(--glass-border)] group focus:outline-none focus:ring-2 focus:ring-[var(--ring)]"
           aria-label={showScrollTop ? "Scroll to top" : "Scroll to next section"}
         >
           {/* Circular Scroll Progress Track */}
