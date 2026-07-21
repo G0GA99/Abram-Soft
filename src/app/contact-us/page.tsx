@@ -177,7 +177,7 @@ export default function ContactPage() {
                   <p className="text-[var(--muted)] max-w-md mx-auto mb-8 text-sm sm:text-base leading-relaxed">
                     Your message has been successfully received and stored securely. We appreciate you reaching out, and our team will get back to you within 24 hours.
                   </p>
-                  <Button onClick={() => setIsSubmitted(false)} className="rounded-full bg-gradient-brand">
+                  <Button onClick={() => setIsSubmitted(false)} variant="swipe" className="rounded-full">
                     Send Another Message
                   </Button>
                 </motion.div>
@@ -253,7 +253,7 @@ export default function ContactPage() {
                     />
                   </div>
 
-                  <Button type="submit" disabled={isSubmitting} className="w-full sm:w-auto h-12 px-8 rounded-full bg-gradient-brand">
+                  <Button type="submit" disabled={isSubmitting} variant="swipe" className="w-full sm:w-auto h-12 px-8 rounded-full">
                     {isSubmitting ? (
                       <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />

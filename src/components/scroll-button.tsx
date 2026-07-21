@@ -46,7 +46,7 @@ export function ScrollButton() {
   };
 
   // SVG parameters for progress circle
-  const radius = 22;
+  const radius = 14;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (scrollProgress / 100) * circumference;
 
@@ -55,31 +55,37 @@ export function ScrollButton() {
       <AnimatePresence mode="wait">
         <motion.button
           id="global-scroll-action"
-          initial={{ opacity: 0, scale: 0.8, y: 10 }}
+          initial={{ opacity: 0, scale: 0.85, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.8, y: 10 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          exit={{ opacity: 0, scale: 0.85, y: 15 }}
+          whileHover={{ 
+            scale: 1.1, 
+            y: -3,
+            boxShadow: "0 8px 20px rgba(27, 176, 128, 0.25)"
+          }}
+          whileTap={{ scale: 0.9, y: 1 }}
+          transition={{ type: "spring", stiffness: 450, damping: 24, mass: 0.7 }}
           onClick={handleScrollAction}
-          className="relative h-12 w-12 rounded-full glass flex items-center justify-center cursor-pointer shadow-[0_8px_32px_rgba(27,176,128,0.15)] border border-[var(--glass-border)] group focus:outline-none focus:ring-2 focus:ring-[var(--ring)]"
+          className="relative h-[35px] w-[35px] rounded-full bg-white dark:bg-[#0B0B0E] hover:bg-[#F5F5F7] dark:hover:bg-[#121216] flex items-center justify-center cursor-pointer border border-neutral-200 dark:border-neutral-800 hover:border-emerald-brand/60 dark:hover:border-emerald-brand/60 group focus:outline-none focus:ring-2 focus:ring-emerald-brand/50 shadow-md transition-colors duration-300"
           aria-label={showScrollTop ? "Scroll to top" : "Scroll to next section"}
         >
           {/* Circular Scroll Progress Track */}
-          <svg className="absolute -rotate-90 w-full h-full p-0.5">
+          <svg className="absolute -rotate-90 w-full h-full p-0 z-20 pointer-events-none">
             <circle
-              cx="24"
-              cy="24"
+              cx="17.5"
+              cy="17.5"
               r={radius}
-              className="stroke-white/5"
-              strokeWidth="2"
+              className="stroke-neutral-100 dark:stroke-neutral-900"
+              strokeWidth="1"
               fill="transparent"
             />
             <motion.circle
-              cx="24"
-              cy="24"
+              cx="17.5"
+              cy="17.5"
               r={radius}
-              className="stroke-[var(--primary)]"
-              strokeWidth="2"
+              className="stroke-emerald-brand"
+              strokeWidth="1.5"
+              strokeLinecap="round"
               fill="transparent"
               strokeDasharray={circumference}
               animate={{ strokeDashoffset }}
@@ -88,18 +94,13 @@ export function ScrollButton() {
           </svg>
 
           {/* Icon (Up/Down) */}
-          <div className="relative z-10 text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-300">
+          <div className="relative z-10 text-neutral-800 dark:text-neutral-200 group-hover:text-emerald-brand transition-colors duration-300">
             {showScrollTop ? (
-              <ArrowUp className="h-5 w-5 animate-bounce-slow" />
+              <ArrowUp className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5" />
             ) : (
-              <ArrowDown className="h-5 w-5 animate-bounce-slow" />
+              <ArrowDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-y-0.5" />
             )}
           </div>
-
-          {/* Floating dynamic hover indicator */}
-          <span className="absolute right-14 bg-[var(--background-secondary)] text-xs font-semibold py-1 px-2.5 rounded-lg border border-[var(--glass-border)] text-[var(--foreground)] whitespace-nowrap opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 origin-right transition-all duration-300 pointer-events-none shadow-md">
-            {showScrollTop ? "Scroll to Top" : "Scroll Down"}
-          </span>
         </motion.button>
       </AnimatePresence>
     </div>

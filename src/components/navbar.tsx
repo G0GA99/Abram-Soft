@@ -79,8 +79,9 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav
+            style={{ height: "60px", width: "810px", maxWidth: "100%" }}
             className={cn(
-              "flex items-center justify-between transition-all duration-300 rounded-full px-4 sm:px-5",
+              "flex items-center justify-between transition-all duration-300 rounded-full px-4 sm:px-5 mx-auto",
               isScrolled
                 ? "glass shadow-xl py-1.5 border border-[var(--glass-border)]"
                 : "py-2 bg-transparent border border-transparent"
@@ -88,7 +89,7 @@ export function Navbar() {
           >
             {/* Logo */}
             <Link href="/" className="group rounded-2xl focus-visible:outline-offset-4" aria-label="AbramSoft home">
-              <BrandLogo className="transition-transform duration-300 group-hover:scale-[1.01]" />
+              <BrandLogo isHeader={true} className="transition-transform duration-300 group-hover:scale-[1.01]" />
             </Link>
 
             {/* Desktop Navigation */}
@@ -157,7 +158,8 @@ export function Navbar() {
               <Button
                 asChild
                 size="default"
-                className="hidden sm:flex rounded-full text-xs font-semibold px-4 py-1.5 h-8.5 bg-gradient-brand hover:shadow-[0_4px_14px_rgba(132,218,37,0.3)] transition-all duration-300 border-0 active:scale-95"
+                variant="swipe"
+                className="hidden sm:flex rounded-full text-xs font-semibold px-4 py-1.5 h-8.5 active:scale-95"
               >
                 <Link href="/contact-us">Contact Us</Link>
               </Button>
@@ -238,7 +240,7 @@ export function Navbar() {
               </div>
 
               <div className="mt-auto pt-6 border-t border-white/5">
-                <Button asChild className="w-full rounded-full bg-gradient-brand py-2 h-10 text-xs font-semibold">
+                <Button asChild variant="swipe" className="w-full rounded-full py-2 h-10 text-xs font-semibold">
                   <Link href="/contact-us" onClick={() => setIsMobileMenuOpen(false)}>
                     Contact Us
                   </Link>

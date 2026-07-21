@@ -4,18 +4,24 @@ interface BrandLogoProps {
   className?: string;
   compact?: boolean;
   light?: boolean;
+  isHeader?: boolean;
 }
 
 /**
  * AbramSoft's modular A is built from three connected paths: craft, code and growth.
  * The detached lime node references a connected system / AI signal.
  */
-export function BrandLogo({ className, compact = false, light = false }: BrandLogoProps) {
+export function BrandLogo({ className, compact = false, light = false, isHeader = false }: BrandLogoProps) {
   return (
-    <div className={cn("inline-flex items-center gap-2.5 sm:gap-3", className)} aria-label="AbramSoft">
+    <div
+      className={cn("inline-flex items-center gap-2.5 sm:gap-3", className)}
+      aria-label="AbramSoft"
+      style={isHeader ? { width: "180.844px", height: "52px", marginRight: "0px" } : undefined}
+    >
       <svg
         aria-hidden="true"
         className="h-9 w-9 sm:h-10 sm:w-10 shrink-0 filter drop-shadow-[0_4px_12px_rgba(27,176,128,0.25)] transition-all duration-500 hover:scale-110"
+        style={isHeader ? { height: "62px", marginLeft: "0px", marginTop: "12px" } : undefined}
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -88,10 +94,20 @@ export function BrandLogo({ className, compact = false, light = false }: BrandLo
         </defs>
       </svg>
       {!compact && (
-        <span className="flex items-baseline font-display leading-none tracking-[0.05em]">
-          <span className={cn("text-base sm:text-lg font-black tracking-wider transition-colors duration-300", light ? "text-white" : "text-[var(--foreground)]")}>ABRAM</span>
-          <span className="text-base sm:text-lg font-black text-[var(--primary)] ml-0.5 tracking-wider">SOFT</span>
-        </span>
+        <div className="flex flex-col select-none">
+          <span className="flex items-baseline font-display leading-none tracking-[0.05em]">
+            <span className={cn("text-base sm:text-lg font-black tracking-wider transition-colors duration-300", light ? "text-white" : "text-[var(--foreground)]")}>ABRAM</span>
+            <span className="text-base sm:text-lg font-black text-[var(--primary)] ml-0.5 tracking-wider">SOFT</span>
+          </span>
+          <span className={cn(
+            isHeader
+              ? "pl-0 -mt-[5px] text-[8.2px] leading-[8.2px] -ml-[3px] mr-0 mb-[3px] h-0 font-mono tracking-[0.025em] uppercase sm:pl-0 sm:-mt-[5px] sm:text-[8.2px] sm:leading-[8.2px] sm:-ml-[3px] sm:mr-0 sm:mb-[3px] sm:h-0"
+              : "text-[5.5px] sm:text-[6.2px] font-mono tracking-[0.025em] uppercase mt-1 leading-none",
+            light ? "text-white/50" : "text-[var(--foreground)]/50"
+          )}>
+            CRAFTING DIGITAL EXCELLENCE
+          </span>
+        </div>
       )}
     </div>
   );

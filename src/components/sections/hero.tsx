@@ -140,6 +140,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
+          style={{ fontWeight: "normal" }}
           className="font-luxury font-normal italic text-xl sm:text-2xl text-[var(--muted)]/95 max-w-3xl mx-auto mb-8 leading-relaxed px-2 tracking-wide"
         >
           We&apos;re a full-service digital solutions agency specializing in web development,
@@ -153,13 +154,13 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12"
         >
-          <Button asChild size="default" className="group">
+          <Button asChild size="default" variant="swipe" className="group">
             <Link href="/portfolio">
               View Our Portfolio
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
-          <Button asChild variant="outline" size="default" id="hero-contact-btn">
+          <Button asChild variant="glassy" size="default" id="hero-contact-btn">
             <Link href="/contact-us">Contact Us</Link>
           </Button>
         </motion.div>

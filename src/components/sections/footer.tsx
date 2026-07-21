@@ -10,7 +10,7 @@ const quickLinks = [
   { name: "About Us", href: "/about-us" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
-  { name: "Blog", href: "/blog" },
+  { name: "Brand Guidelines", href: "/brand-sheet" },
   { name: "Contact", href: "/contact-us" },
 ];
 

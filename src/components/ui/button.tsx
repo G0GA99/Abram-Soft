@@ -9,11 +9,14 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "btn-gradient text-[var(--primary-foreground)] glow-subtle hover:glow-brand", 
+        swipe: "btn-swipe-3d text-[var(--primary-foreground)]",
+        swipeOutline: "btn-swipe-3d-outline text-[var(--foreground)]",
         secondary:
           "bg-[var(--glass)] border border-[var(--glass-border)] text-[var(--foreground)] hover:bg-[var(--card-hover)] hover:border-[var(--primary)]/30",
         ghost: "hover:bg-[var(--glass)] text-[var(--foreground)]",
         outline:
           "border-2 border-[var(--glass-border)] bg-transparent text-[var(--foreground)] hover:bg-[var(--glass)] hover:border-[var(--primary)]/50",
+        glassy: "btn-glassy-hover-theme text-[var(--foreground)]",
         link: "text-[var(--primary)] underline-offset-4 hover:underline",
       },
       size: {

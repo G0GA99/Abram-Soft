@@ -291,3 +291,206 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Premium Swipe Buttons */
+.btn-swipe-3d {
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  z-index: 10 !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 0 15px rgba(27, 176, 128, 0.25), 0 4px 12px -2px rgba(27, 176, 128, 0.15) !important;
+  transform: translateY(0);
+}
+
+.btn-swipe-3d::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  z-index: -2;
+  transition: all 0.35s ease;
+  border-radius: inherit;
+}
+
+.btn-swipe-3d::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: inherit;
+}
+
+/* Dark Mode Fill Color (White Swipe) */
+:root:not(.light) .btn-swipe-3d::after {
+  background-color: #F5F5F7 !important;
+}
+
+/* Light Mode Fill Color (Black Swipe) */
+:root.light .btn-swipe-3d::after {
+  background-color: #111114 !important;
+}
+
+/* Outline Swipe Button variant */
+.btn-swipe-3d-outline {
+  position: relative !important;
+  overflow: hidden !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 1.5px solid var(--glass-border) !important;
+  z-index: 10 !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05) !important;
+  transform: translateY(0);
+}
+
+.btn-swipe-3d-outline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: inherit;
+}
+
+/* Dark Mode Fill Color (White Swipe) */
+:root:not(.light) .btn-swipe-3d-outline::after {
+  background-color: #F5F5F7 !important;
+}
+
+/* Light Mode Fill Color (Black Swipe) */
+:root.light .btn-swipe-3d-outline::after {
+  background-color: #111114 !important;
+}
+
+/* Hover and active horizontal fill actions */
+.btn-swipe-3d:hover::after,
+.btn-swipe-3d:focus-visible::after,
+.btn-swipe-3d:active::after,
+.btn-swipe-3d-outline:hover::after,
+.btn-swipe-3d-outline:focus-visible::after,
+.btn-swipe-3d-outline:active::after {
+  width: 100% !important;
+}
+
+/* Font color conversions inside button content - STRICT MODE SCALED */
+.btn-swipe-3d,
+.btn-swipe-3d *,
+.btn-swipe-3d-outline,
+.btn-swipe-3d-outline * {
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 1. Dark Mode: text/icon changes on hover/active to dark color */
+:root:not(.light) .btn-swipe-3d:hover,
+:root:not(.light) .btn-swipe-3d:focus-visible,
+:root:not(.light) .btn-swipe-3d-outline:hover,
+:root:not(.light) .btn-swipe-3d-outline:focus-visible {
+  color: #08080A !important;
+}
+:root:not(.light) .btn-swipe-3d:hover *,
+:root:not(.light) .btn-swipe-3d:focus-visible *,
+:root:not(.light) .btn-swipe-3d-outline:hover *,
+:root:not(.light) .btn-swipe-3d-outline:focus-visible * {
+  color: #08080A !important;
+}
+
+/* 2. Light Mode: text/icon changes on hover/active to light color */
+:root.light .btn-swipe-3d:hover,
+:root.light .btn-swipe-3d:focus-visible,
+:root.light .btn-swipe-3d-outline:hover,
+:root.light .btn-swipe-3d-outline:focus-visible {
+  color: #FAFAFC !important;
+}
+:root.light .btn-swipe-3d:hover *,
+:root.light .btn-swipe-3d:focus-visible *,
+:root.light .btn-swipe-3d-outline:hover *,
+:root.light .btn-swipe-3d-outline:focus-visible * {
+  color: #FAFAFC !important;
+}
+
+/* Glow & Placement transformations on Hover & Active */
+.btn-swipe-3d:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 25px rgba(27, 176, 128, 0.55), 0 8px 24px rgba(27, 176, 128, 0.3) !important;
+}
+
+.btn-swipe-3d-outline:hover {
+  transform: translateY(-2px) !important;
+  border-color: transparent !important;
+  box-shadow: 0 0 20px rgba(27, 176, 128, 0.45), 0 4px 15px rgba(27, 176, 128, 0.25) !important;
+}
+:root.light .btn-swipe-3d-outline:hover {
+  box-shadow: 0 0 20px rgba(17, 17, 20, 0.25), 0 4px 15px rgba(17, 17, 20, 0.15) !important;
+}
+
+.btn-swipe-3d:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 0 10px rgba(27, 176, 128, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  filter: none !important;
+}
+
+.btn-swipe-3d-outline:active {
+  transform: translateY(1px) !important;
+  border-color: transparent !important;
+  box-shadow: 0 0 10px rgba(27, 176, 128, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  filter: none !important;
+}
+:root.light .btn-swipe-3d-outline:active {
+  box-shadow: 0 0 10px rgba(17, 17, 20, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Premium Glassy Hover Button (smooth color change based on mode) */
+.btn-glassy-hover-theme {
+  position: relative !important;
+  background-color: var(--glass) !important;
+  border: 1.5px solid var(--glass-border) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform: translateY(0);
+}
+
+/* Hover State - Dark Mode (Transitions to White background and Dark text) */
+:root:not(.light) .btn-glassy-hover-theme:hover {
+  background-color: #F5F5F7 !important;
+  border-color: #F5F5F7 !important;
+  color: #08080A !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.15), 0 0 15px rgba(27, 176, 128, 0.35) !important;
+}
+
+:root:not(.light) .btn-glassy-hover-theme:hover * {
+  color: #08080A !important;
+}
+
+/* Hover State - Light Mode (Transitions to Charcoal background and White text) */
+:root.light .btn-glassy-hover-theme:hover {
+  background-color: #111114 !important;
+  border-color: #111114 !important;
+  color: #FAFAFC !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 0 15px rgba(27, 176, 128, 0.2) !important;
+}
+
+:root.light .btn-glassy-hover-theme:hover * {
+  color: #FAFAFC !important;
+}
+
+/* Click/Active state for glassy buttons */
+.btn-glassy-hover-theme:active {
+  transform: translateY(1px) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+
