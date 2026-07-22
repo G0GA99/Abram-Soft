@@ -51,10 +51,17 @@ export function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -79,11 +86,10 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav
-            style={{ height: "60px", width: "810px", maxWidth: "100%" }}
             className={cn(
-              "flex items-center justify-between transition-all duration-300 rounded-full px-4 sm:px-5 mx-auto",
+              "flex items-center justify-between transition-all duration-300 rounded-full px-3.5 sm:px-5 mx-auto h-[60px] w-full max-w-[850px]",
               isScrolled
-                ? "glass shadow-xl py-1.5 border border-[var(--glass-border)]"
+                ? "glass shadow-xl py-1.5 border border-[var(--glass-border)] bg-[var(--background)]/80 backdrop-blur-md"
                 : "py-2 bg-transparent border border-transparent"
             )}
           >
@@ -197,7 +203,7 @@ export function Navbar() {
             >
               <div>
                 <div className="flex justify-between items-center mb-6">
-                  <BrandLogo compact />
+                  <BrandLogo />
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="h-8 w-8 rounded-full glass flex items-center justify-center border border-[var(--glass-border)]"

@@ -8,20 +8,19 @@ interface BrandLogoProps {
 }
 
 /**
- * AbramSoft's modular A is built from three connected paths: craft, code and growth.
- * The detached lime node references a connected system / AI signal.
+ * AbramSoft's modular logo: SVG monogram + wordmark + tagline.
+ * Provides consistent rendering across header, footer, and mobile screens.
  */
 export function BrandLogo({ className, compact = false, light = false, isHeader = false }: BrandLogoProps) {
   return (
     <div
-      className={cn("inline-flex items-center gap-2.5 sm:gap-3", className)}
+      className={cn("inline-flex items-center gap-2.5 sm:gap-3 shrink-0", className)}
       aria-label="AbramSoft"
-      style={isHeader ? { width: "180.844px", height: "52px", marginRight: "0px" } : undefined}
     >
+      {/* 3D Glassy "A" Monogram */}
       <svg
         aria-hidden="true"
-        className="h-9 w-9 sm:h-10 sm:w-10 shrink-0 filter drop-shadow-[0_4px_12px_rgba(27,176,128,0.25)] transition-all duration-500 hover:scale-110"
-        style={isHeader ? { height: "62px", marginLeft: "0px", marginTop: "12px" } : undefined}
+        className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 shrink-0 filter drop-shadow-[0_4px_12px_rgba(27,176,128,0.25)] transition-all duration-300 group-hover:scale-105"
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -43,14 +42,14 @@ export function BrandLogo({ className, compact = false, light = false, isHeader 
           strokeLinecap="round"
         />
 
-        {/* Glossy White Reflection Highlight on Outer Arch for realistic 3D Glassy Tube effect */}
+        {/* Glossy White Reflection Highlight on Outer Arch */}
         <path
           d="M 31 66 L 50 29.5 L 69 66"
           stroke="url(#whiteHighlight)"
           strokeWidth="3.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          opacity="0.6"
+          opacity="0.65"
         />
 
         {/* Glossy White Reflection Highlight on Crossbar */}
@@ -59,10 +58,10 @@ export function BrandLogo({ className, compact = false, light = false, isHeader 
           stroke="url(#whiteHighlight)"
           strokeWidth="2.5"
           strokeLinecap="round"
-          opacity="0.6"
+          opacity="0.65"
         />
 
-        {/* Central tech hub core - adding a modern, glowing software element */}
+        {/* Central tech hub core */}
         <circle
           cx="50"
           cy="42"
@@ -93,17 +92,23 @@ export function BrandLogo({ className, compact = false, light = false, isHeader 
           </linearGradient>
         </defs>
       </svg>
+
       {!compact && (
-        <div className="flex flex-col select-none">
-          <span className="flex items-baseline font-display leading-none tracking-[0.05em]">
-            <span className={cn("text-base sm:text-lg font-black tracking-wider transition-colors duration-300", light ? "text-white" : "text-[var(--foreground)]")}>ABRAM</span>
-            <span className="text-base sm:text-lg font-black text-[var(--primary)] ml-0.5 tracking-wider">SOFT</span>
+        <div className="flex flex-col select-none justify-center">
+          <span className="flex items-baseline font-display leading-none tracking-[0.04em]">
+            <span className={cn(
+              "text-sm sm:text-base md:text-lg font-black tracking-wider transition-colors duration-300", 
+              light ? "text-white" : "text-[var(--foreground)]"
+            )}>
+              ABRAM
+            </span>
+            <span className="text-sm sm:text-base md:text-lg font-black text-[var(--primary)] ml-0.5 tracking-wider">
+              SOFT
+            </span>
           </span>
           <span className={cn(
-            isHeader
-              ? "pl-0 -mt-[5px] text-[8.2px] leading-[8.2px] -ml-[3px] mr-0 mb-[3px] h-0 font-mono tracking-[0.025em] uppercase sm:pl-0 sm:-mt-[5px] sm:text-[8.2px] sm:leading-[8.2px] sm:-ml-[3px] sm:mr-0 sm:mb-[3px] sm:h-0"
-              : "text-[5.5px] sm:text-[6.2px] font-mono tracking-[0.025em] uppercase mt-1 leading-none",
-            light ? "text-white/50" : "text-[var(--foreground)]/50"
+            "text-[7px] sm:text-[8px] md:text-[8.5px] font-mono tracking-[0.16em] sm:tracking-[0.2em] uppercase mt-1 leading-none font-medium",
+            light ? "text-white/60" : "text-[var(--foreground)]/60"
           )}>
             CRAFTING DIGITAL EXCELLENCE
           </span>
@@ -112,3 +117,4 @@ export function BrandLogo({ className, compact = false, light = false, isHeader 
     </div>
   );
 }
+

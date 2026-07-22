@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform, useMotionValue } from "framer-motion";
 import { ArrowRight, Sparkles, Users, Briefcase, Star } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -48,7 +48,9 @@ function GradientOrb({ className }: { className?: string }) {
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -58,18 +60,23 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   useEffect(() => {
+    let ticking = false;
     const handleMouseMove = (e: MouseEvent) => {
-      if (containerRef.current) {
-        const rect = containerRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: (e.clientX - rect.left - rect.width / 2) / 50,
-          y: (e.clientY - rect.top - rect.height / 2) / 50,
+      if (!ticking && containerRef.current) {
+        window.requestAnimationFrame(() => {
+          if (containerRef.current) {
+            const rect = containerRef.current.getBoundingClientRect();
+            mouseX.set((e.clientX - rect.left - rect.width / 2) / 50);
+            mouseY.set((e.clientY - rect.top - rect.height / 2) / 50);
+          }
+          ticking = false;
         });
+        ticking = true;
       }
     };
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  }, [mouseX, mouseY]);
 
   const stats = [
     { icon: Users, value: "57+", label: "Clients" },
@@ -192,8 +199,8 @@ export function Hero() {
       <motion.div
         className="absolute right-[10%] top-1/3 w-64 h-64 hidden lg:block pointer-events-none"
         style={{
-          rotateX: mousePosition.y,
-          rotateY: mousePosition.x,
+          rotateX: mouseY,
+          rotateY: mouseX,
         }}
         animate={{
           y: [0, -20, 0],

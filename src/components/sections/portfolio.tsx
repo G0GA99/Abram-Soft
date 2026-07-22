@@ -39,44 +39,31 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="group relative"
     >
-      <Link href={project.href}>
-        <div className="glass-card overflow-hidden">
+      <Link href={project.href} className="block">
+        <div className="glass-card overflow-hidden p-5 sm:p-6 transition-all duration-300">
           {/* Image Container */}
-          <div className="relative aspect-[16/10] overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-brand/20" />
-            <div className="absolute inset-0 flex items-center justify-center text-[var(--muted)]">
-              <div className="text-center">
-                <div className="h-20 w-20 mx-auto rounded-2xl bg-gradient-brand/10 flex items-center justify-center mb-4">
-                  <ExternalLink className="h-8 w-8 text-[var(--primary)]" />
-                </div>
-                <p className="font-display font-semibold text-lg">{project.title}</p>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-5 bg-gradient-brand/10 border border-[var(--glass-border)] flex items-center justify-center group-hover:border-[var(--primary)]/40 transition-colors">
+            <div className="text-center p-4">
+              <div className="h-14 w-14 sm:h-16 sm:w-16 mx-auto rounded-2xl bg-[var(--primary)]/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
+                <ExternalLink className="h-6 w-6 sm:h-7 sm:w-7 text-[var(--primary)]" />
               </div>
+              <span className="font-mono text-xs text-[var(--muted)] tracking-wider uppercase">Case Study</span>
             </div>
-            {/* Hover Overlay */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/80 to-transparent flex flex-col justify-end p-6"
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                whileHover={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.3, delay: 0.1 }}
-              >
-                <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[var(--primary)]/20 text-[var(--primary)] mb-3">
-                  {project.category}
-                </span>
-                <h3 className="font-display text-xl font-bold text-[var(--foreground)] mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-sm text-[var(--muted)] mb-4">{project.description}</p>
-                <div className="flex items-center gap-2 text-[var(--primary)] font-medium text-sm">
-                  <span>View Case Study</span>
-                  <ArrowUpRight className="h-4 w-4" />
-                </div>
-              </motion.div>
-            </motion.div>
+          </div>
+
+          {/* Content Details */}
+          <div>
+            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[var(--primary)]/15 text-[var(--primary)] mb-3">
+              {project.category}
+            </span>
+            <h3 className="font-display text-xl font-bold text-[var(--foreground)] mb-2 group-hover:text-[var(--primary)] transition-colors">
+              {project.title}
+            </h3>
+            <p className="text-sm text-[var(--muted)] mb-4 line-clamp-2 leading-relaxed">{project.description}</p>
+            <div className="flex items-center gap-1.5 text-[var(--primary)] font-semibold text-sm group-hover:translate-x-1 transition-transform">
+              <span>View Case Study</span>
+              <ArrowUpRight className="h-4 w-4" />
+            </div>
           </div>
         </div>
       </Link>
