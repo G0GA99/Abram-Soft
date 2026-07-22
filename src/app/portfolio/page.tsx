@@ -56,7 +56,7 @@ export default function PortfolioPage() {
             </h1>
             <p 
               style={{ fontFamily: 'var(--font-luxury), "Cormorant Garamond", Georgia, serif', fontStyle: 'italic' }} 
-              className="text-[19px] leading-relaxed font-normal text-[var(--muted)] max-w-[587px] w-full mx-auto"
+              className="text-[24px] leading-relaxed font-normal text-[var(--muted)] max-w-[620px] w-full mx-auto"
             >
               Explore our software engineering, web portals, and growth case studies crafted with digital precision.
             </p>
