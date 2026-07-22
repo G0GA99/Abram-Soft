@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   description: "A full-service digital solutions agency specializing in web development, SEO, social media marketing, and quality assurance to help businesses grow online.",
   keywords: ["web development", "SEO", "digital marketing", "AI/ML", "software development", "IT solutions"],
   authors: [{ name: "AbramSoft" }],
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "AbramSoft - Software Development & IT Solutions Company",
     description: "A full-service digital solutions agency specializing in web development, SEO, and digital marketing.",
@@ -42,6 +47,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
+      </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} ${cormorantGaramond.variable} font-sans`} suppressHydrationWarning>
         <ThemeProvider>
           {children}

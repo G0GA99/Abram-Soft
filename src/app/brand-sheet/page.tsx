@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/sections/footer";
+import { BrandLogo } from "@/components/brand-logo";
 import { 
   Copy, 
   Check, 
@@ -690,8 +691,8 @@ export default function BrandSheetPage() {
                     </div>
 
                     <div class="flex-1 flex items-center justify-center bg-zinc-950/40 rounded-xl border border-white/5 min-h-[140px] p-4">
-                        <div class="flex items-center gap-3.5">
-                            <svg viewBox="0 0 100 100" class="h-8.5 w-8.5 text-[#1BB080] shrink-0">
+                        <div class="flex items-center gap-2">
+                            <svg viewBox="0 0 100 100" class="h-10 w-10 text-[#1BB080] shrink-0 mt-1.5 -mr-3">
                                 <path d="M 28 72 L 50 26 L 72 72" stroke="url(#hLkGrad)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
                                 <path d="M 39 52 L 61 52" stroke="url(#hLkGrad)" stroke-width="10" stroke-linecap="round" />
                                 <circle cx="50" cy="42" r="3.2" fill="#ffffff" />
@@ -790,7 +791,7 @@ export default function BrandSheetPage() {
 
                             <div class="my-auto flex items-center justify-between">
                                 <div class="space-y-1">
-                                    <h5 class="font-display font-bold text-sm text-white">Abrar Ahmad</h5>
+                                    <h5 class="font-display font-bold text-sm text-white">MUHAMMAD ABRAR</h5>
                                     <p class="text-[9px] text-emerald-brand font-mono uppercase tracking-wider">CEO</p>
                                 </div>
                             </div>
@@ -1514,27 +1515,7 @@ export default function BrandSheetPage() {
               </div>
 
               <div className="flex-1 flex items-center justify-center bg-zinc-950/40 rounded-xl border border-white/5 min-h-[140px] p-4">
-                <div className="flex items-center gap-3.5">
-                  <svg viewBox="0 0 100 100" className="h-8.5 w-8.5 text-[#1BB080] shrink-0">
-                    <path d="M 28 72 L 50 26 L 72 72" stroke="url(#hLkGrad)" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M 39 52 L 61 52" stroke="url(#hLkGrad)" strokeWidth="10" strokeLinecap="round" />
-                    <circle cx="50" cy="42" r="3.2" fill="#ffffff" />
-                    <defs>
-                      <linearGradient id="hLkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#24D09B" /><stop offset="100%" stopColor="#1BB080" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <div className="flex flex-col">
-                    <span className="flex items-baseline font-display leading-none tracking-[0.05em]">
-                      <span className="text-sm font-black tracking-wider text-white">ABRAM</span>
-                      <span className="text-sm font-black text-[#1BB080] ml-0.5 tracking-wider">SOFT</span>
-                    </span>
-                    <span className="text-[4.8px] font-mono text-zinc-400 tracking-[0.02em] uppercase mt-1 leading-none select-none">
-                      CRAFTING DIGITAL EXCELLENCE
-                    </span>
-                  </div>
-                </div>
+                <BrandLogo light />
               </div>
 
               <p className="text-[11px] text-zinc-400 font-sans leading-relaxed">
@@ -1581,31 +1562,11 @@ export default function BrandSheetPage() {
               </div>
 
               <div className="flex-1 flex items-center justify-center bg-[#FAFAFC] rounded-xl border border-black/5 min-h-[160px] p-4">
-                <div className="flex items-center gap-3.5">
-                  <svg viewBox="0 0 100 100" className="h-8.5 w-8.5 text-[#1BB080] shrink-0">
-                    <path d="M 28 72 L 50 26 L 72 72" stroke="url(#lightSpecGrad)" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M 39 52 L 61 52" stroke="url(#lightSpecGrad)" strokeWidth="10" strokeLinecap="round" />
-                    <circle cx="50" cy="42" r="3.2" fill="#1BB080" />
-                    <defs>
-                      <linearGradient id="lightSpecGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#24D09B" /><stop offset="100%" stopColor="#1BB080" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  <div className="flex flex-col">
-                    <span className="flex items-baseline font-display leading-none tracking-[0.05em]">
-                      <span className="text-sm font-black tracking-wider text-zinc-900">ABRAM</span>
-                      <span className="text-sm font-black text-[#1BB080] ml-0.5 tracking-wider">SOFT</span>
-                    </span>
-                    <span className="text-[4.8px] font-mono text-zinc-500 tracking-[0.02em] uppercase mt-1 leading-none select-none">
-                      CRAFTING DIGITAL EXCELLENCE
-                    </span>
-                  </div>
-                </div>
+                <BrandLogo />
               </div>
 
               <p className="text-[11.5px] text-zinc-500 font-sans leading-relaxed">
-                On off-white bases (#FAFAFC), the wordmark text transitions to ink-black (#111114) while the core dot gains a rich green fill.
+                On off-white bases (#FAFAFC), the wordmark text transitions to dark mode contrast while maintaining exact logo proportions.
               </p>
             </div>
 
@@ -1730,7 +1691,7 @@ export default function BrandSheetPage() {
                     {/* Employee Profile */}
                     <div className="my-auto flex items-center justify-between">
                       <div className="space-y-1">
-                        <h5 className="font-display font-bold text-sm text-white">Abrar Ahmad</h5>
+                        <h5 className="font-display font-bold text-sm text-white">MUHAMMAD ABRAR</h5>
                         <p className="text-[9px] text-[#1BB080] font-mono uppercase tracking-wider">CEO</p>
                       </div>
                     </div>
@@ -1874,13 +1835,187 @@ export default function BrandSheetPage() {
           </div>
         </section>
 
+        {/* 07 • FAVICON & APP ICON SYSTEM */}
+        <section className="space-y-6">
+          <div className="flex items-baseline justify-between border-b border-white/10 pb-4">
+            <div>
+              <h2 className="text-sm font-semibold tracking-wider text-[#1BB080] uppercase">07 · Favicon & App Icon System</h2>
+              <p className="text-xs text-zinc-500 mt-1">Multi-resolution browser favicon specifications and live tab environment mockup.</p>
+            </div>
+            <div className="font-mono text-xs text-zinc-600">FAVICON & APP ICON</div>
+          </div>
+
+          {/* Live Browser Tab Showcase */}
+          <div className="bg-[#0E0E12] border border-white/5 rounded-2xl p-5 space-y-4">
+            <div className="flex justify-between items-center">
+              <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider">Browser Tab Bar Live Mockup</span>
+              <span className="font-mono text-[9px] text-[#1BB080] bg-[#1BB080]/10 border border-[#1BB080]/20 px-2 py-0.5 rounded">32×32 TAB ICON SPEC</span>
+            </div>
+
+            {/* Simulated Chrome Browser Window */}
+            <div className="rounded-xl border border-white/10 bg-[#16161C] overflow-hidden shadow-2xl">
+              {/* Chrome Window Header */}
+              <div className="bg-[#0B0B0E] px-4 py-2.5 flex items-center justify-between border-b border-white/5">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-rose-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-amber-500/80" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
+                </div>
+                {/* Tab Bar */}
+                <div className="flex items-center gap-2 flex-1 max-w-lg ml-4">
+                  {/* Active AbramSoft Tab */}
+                  <div className="flex items-center gap-2 bg-[#16161C] border-t-2 border-[#1BB080] text-white px-3.5 py-1.5 rounded-t-lg text-xs font-sans shadow-md">
+                    {/* Favicon SVG Icon in Roundy Circle Badge */}
+                    <div className="w-4 h-4 rounded-full bg-[#08080A] border border-[#1BB080]/50 flex items-center justify-center p-[1px] shrink-0">
+                      <svg viewBox="0 0 100 100" className="h-3 w-3 shrink-0 text-[#1BB080]">
+                        <path d="M 28 72 L 50 26 L 72 72" stroke="url(#favTabGrad)" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M 39 52 L 61 52" stroke="url(#favTabGrad)" strokeWidth="10" strokeLinecap="round" />
+                        <circle cx="50" cy="42" r="3.5" fill="#ffffff" />
+                        <defs>
+                          <linearGradient id="favTabGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stopColor="#24D09B" />
+                            <stop offset="100%" stopColor="#1BB080" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <span className="font-semibold text-[11px] truncate max-w-[200px]">AbramSoft | Crafting Digital Excellence</span>
+                    <span className="text-zinc-500 hover:text-white cursor-pointer text-xs ml-1">×</span>
+                  </div>
+                  {/* Secondary Inactive Tab */}
+                  <div className="hidden sm:flex items-center gap-2 text-zinc-500 px-3 py-1.5 text-xs font-sans">
+                    <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
+                    <span className="text-[11px] truncate max-w-[100px]">New Tab</span>
+                  </div>
+                </div>
+              </div>
+              {/* URL Address Bar */}
+              <div className="bg-[#121217] px-4 py-2 flex items-center gap-3 border-b border-white/5 text-xs text-zinc-400 font-mono">
+                <div className="flex items-center gap-1.5 text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 text-[10px]">
+                  <span>🔒 https://</span>
+                </div>
+                <span className="text-white text-[11px] tracking-wide">www.abramsoft.com</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Favicon Multi-Format Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            {/* 1. Standard Web Favicon */}
+            <div className="bg-[#0E0E12] border border-white/5 rounded-2xl p-5 space-y-4 flex flex-col justify-between">
+              <div className="flex justify-between items-start">
+                <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider">Web Favicon</span>
+                <span className="font-mono text-[9px] text-zinc-500">16×16 / 32×32</span>
+              </div>
+              <div className="aspect-[1.2/1] bg-zinc-950/60 rounded-xl border border-white/5 flex items-center justify-center relative overflow-hidden">
+                {/* Favicon Display Box - Roundy Circle Style */}
+                <div className="w-12 h-12 bg-[#08080A] rounded-full border border-[#1BB080]/40 shadow-[0_0_15px_rgba(27,176,128,0.2)] flex items-center justify-center p-2">
+                  <svg viewBox="0 0 100 100" className="h-7 w-7 text-[#1BB080]">
+                    <path d="M 28 72 L 50 26 L 72 72" stroke="url(#favGridGrad)" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M 39 52 L 61 52" stroke="url(#favGridGrad)" strokeWidth="10" strokeLinecap="round" />
+                    <circle cx="50" cy="42" r="3.5" fill="#ffffff" />
+                    <defs>
+                      <linearGradient id="favGridGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#24D09B" />
+                        <stop offset="100%" stopColor="#1BB080" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-white block">favicon.ico & favicon.svg</span>
+                <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
+                  Clean high-DPI vector icon optimized for browser tabs, bookmarks, and browser histories.
+                </p>
+              </div>
+            </div>
+
+            {/* 2. Apple Touch Icon */}
+            <div className="bg-[#0E0E12] border border-white/5 rounded-2xl p-5 space-y-4 flex flex-col justify-between">
+              <div className="flex justify-between items-start">
+                <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider">Apple Touch Icon</span>
+                <span className="font-mono text-[9px] text-zinc-500">180×180 PNG</span>
+              </div>
+              <div className="aspect-[1.2/1] bg-zinc-950/60 rounded-xl border border-white/5 flex items-center justify-center relative overflow-hidden">
+                {/* iOS App Icon Shape */}
+                <div className="w-14 h-14 bg-gradient-to-br from-[#1BB080] via-[#0E0E12] to-[#08080A] rounded-2xl p-0.5 border border-white/20 shadow-xl flex items-center justify-center">
+                  <div className="w-full h-full bg-[#08080A] rounded-[14px] flex items-center justify-center">
+                    <svg viewBox="0 0 100 100" className="h-8 w-8 text-[#1BB080]">
+                      <path d="M 28 72 L 50 26 L 72 72" stroke="url(#favGridGrad)" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
+                      <path d="M 39 52 L 61 52" stroke="url(#favGridGrad)" strokeWidth="10" strokeLinecap="round" />
+                      <circle cx="50" cy="42" r="3.5" fill="#ffffff" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-white block">apple-touch-icon.png</span>
+                <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
+                  iOS Home Screen bookmark icon with rounded squircle geometry and glossy dark glass styling.
+                </p>
+              </div>
+            </div>
+
+            {/* 3. Android PWA Maskable Icon */}
+            <div className="bg-[#0E0E12] border border-white/5 rounded-2xl p-5 space-y-4 flex flex-col justify-between">
+              <div className="flex justify-between items-start">
+                <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider">Android PWA Icon</span>
+                <span className="font-mono text-[9px] text-zinc-500">192×192 / 512×512</span>
+              </div>
+              <div className="aspect-[1.2/1] bg-zinc-950/60 rounded-xl border border-white/5 flex items-center justify-center relative overflow-hidden">
+                {/* Android Maskable Circle with Safe Zone */}
+                <div className="w-14 h-14 rounded-full bg-[#08080A] border border-[#1BB080]/30 shadow-xl flex items-center justify-center relative">
+                  <div className="absolute inset-1 rounded-full border border-dashed border-[#1BB080]/20" />
+                  <svg viewBox="0 0 100 100" className="h-8 w-8 text-[#1BB080] z-10">
+                    <path d="M 28 72 L 50 26 L 72 72" stroke="url(#favGridGrad)" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M 39 52 L 61 52" stroke="url(#favGridGrad)" strokeWidth="10" strokeLinecap="round" />
+                    <circle cx="50" cy="42" r="3.5" fill="#ffffff" />
+                  </svg>
+                </div>
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-white block">android-chrome-512x512.png</span>
+                <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
+                  Adaptive maskable icon designed with 80% inner safe zone padding for Android OS launchers.
+                </p>
+              </div>
+            </div>
+
+            {/* 4. Safari Pinned Tab Mask Icon */}
+            <div className="bg-[#0E0E12] border border-white/5 rounded-2xl p-5 space-y-4 flex flex-col justify-between">
+              <div className="flex justify-between items-start">
+                <span className="font-mono text-[10px] text-zinc-400 uppercase tracking-wider">Safari Pinned Tab</span>
+                <span className="font-mono text-[9px] text-zinc-500">Vector SVG</span>
+              </div>
+              <div className="aspect-[1.2/1] bg-zinc-950/60 rounded-xl border border-white/5 flex items-center justify-center relative overflow-hidden">
+                <div className="p-3 bg-zinc-900 rounded-xl border border-white/10 flex items-center justify-center">
+                  <svg viewBox="0 0 100 100" className="h-8 w-8 text-[#1BB080]">
+                    <path d="M 28 72 L 50 26 L 72 72" stroke="currentColor" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                    <path d="M 39 52 L 61 52" stroke="currentColor" strokeWidth="10" strokeLinecap="round" />
+                    <circle cx="50" cy="42" r="3.5" fill="#ffffff" />
+                  </svg>
+                </div>
+              </div>
+              <div className="space-y-1">
+                <span className="text-xs font-semibold text-white block">safari-pinned-tab.svg</span>
+                <p className="text-[11px] text-zinc-400 leading-relaxed font-sans">
+                  Monochrome vector mask format with custom theme color (#1BB080) for macOS Safari pinned tabs.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
       </main>
 
       {/* FOOTER FOOTNOTE */}
       <footer className="border-t border-white/10 py-8 bg-[#07070A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-zinc-500">
           <span>ABRAMSOFT · BRAND SHEET SPECIFICATION v1.0</span>
-          <span>6 sections · Space Grotesk / Cormorant Garamond / Inter</span>
+          <span>7 sections · Space Grotesk / Cormorant Garamond / Inter</span>
         </div>
       </footer>
 

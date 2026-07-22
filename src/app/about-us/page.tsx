@@ -32,11 +32,11 @@ const values = [
 
 const teamMembers = [
   {
-    name: "Haris Abram",
-    role: "Founder & Chief Software Architect",
+    name: "Muhammad Abrar",
+    role: "CEO & Founder",
     bio: "Pioneering highly scalable enterprise cloud architectures, premium design systems, and resilient engineering pipelines.",
     color: "from-[#84da25] to-[#00ffdd]",
-    initials: "HA",
+    initials: "MA",
   },
   {
     name: "Sara Alvi",
