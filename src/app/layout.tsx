@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { CustomCursor } from "@/components/custom-cursor";
 import { ScrollButton } from "@/components/scroll-button";
+import { SmoothScroll } from "@/components/smooth-scroll";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,9 +54,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       </head>
       <body className={`${inter.variable} ${spaceGrotesk.variable} ${cormorantGaramond.variable} font-sans`} suppressHydrationWarning>
         <ThemeProvider>
-          {children}
-          <CustomCursor />
-          <ScrollButton />
+          <SmoothScroll>
+            {children}
+            <CustomCursor />
+            <ScrollButton />
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>

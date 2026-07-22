@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --font-serif: var(--font-luxury), "Cormorant Garamond", Georgia, serif;
+  --font-luxury: var(--font-luxury), "Cormorant Garamond", Georgia, serif;
   --color-brand-primary: #1bb080;
   --color-brand-secondary: #24d09b;
   --color-brand-accent: #161824;
@@ -81,6 +83,27 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+  }
+
+  /* Lenis Smooth Scroll Core Styles */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
   }
 
   body {
