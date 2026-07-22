@@ -11,16 +11,16 @@ interface BrandLogoProps {
  * AbramSoft's modular logo: SVG monogram + wordmark + tagline.
  * Provides consistent rendering across header, footer, and mobile screens.
  */
-export function BrandLogo({ className, compact = false, light = false, isHeader = false }: BrandLogoProps) {
+export function BrandLogo({ className, compact = false, light = false }: BrandLogoProps) {
   return (
     <div
-      className={cn("inline-flex items-center gap-2 shrink-0", className)}
+      className={cn("inline-flex items-center gap-2 shrink-0 select-none", className)}
       aria-label="AbramSoft"
     >
       {/* 3D Glassy "A" Monogram */}
       <svg
         aria-hidden="true"
-        className="h-[38px] w-[38px] sm:h-[42px] sm:w-[42px] md:h-[45px] md:w-[45px] mt-1.5 -mr-3 shrink-0 filter drop-shadow-[0_4px_12px_rgba(27,176,128,0.25)] transition-all duration-300 group-hover:scale-105"
+        className="h-[38px] w-[38px] sm:h-[40px] sm:w-[40px] mt-1 -mr-2.5 shrink-0 filter drop-shadow-[0_4px_12px_rgba(27,176,128,0.25)] transition-all duration-300 group-hover:scale-105"
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -94,22 +94,25 @@ export function BrandLogo({ className, compact = false, light = false, isHeader 
       </svg>
 
       {!compact && (
-        <div className="flex flex-col select-none justify-center">
+        <div className="flex flex-col justify-center">
           <span className="flex items-baseline font-display leading-none tracking-[0.04em]">
             <span className={cn(
-              "text-sm sm:text-base md:text-lg font-black tracking-wider transition-colors duration-300", 
+              "text-sm sm:text-[15px] font-black tracking-wider transition-colors duration-300", 
               light ? "text-white" : "text-[var(--foreground)]"
             )}>
               ABRAM
             </span>
-            <span className="text-sm sm:text-base md:text-lg font-black text-[var(--primary)] ml-0.5 tracking-wider">
+            <span className="text-sm sm:text-[15px] font-black text-[var(--primary)] ml-0.5 tracking-wider">
               SOFT
             </span>
           </span>
-          <span className={cn(
-            "text-[7px] sm:text-[7.5px] md:text-[8px] font-mono tracking-[0.02em] sm:tracking-[0.04em] uppercase -mt-[5px] leading-none font-semibold whitespace-nowrap block",
-            light ? "text-white/60" : "text-[var(--foreground)]/60"
-          )}>
+          <span
+            style={{ fontSize: "6.4px" }}
+            className={cn(
+              "font-mono tracking-[0.03em] uppercase -mt-[3px] leading-none font-semibold whitespace-nowrap block",
+              light ? "text-white/60" : "text-[var(--foreground)]/60"
+            )}
+          >
             CRAFTING DIGITAL EXCELLENCE
           </span>
         </div>

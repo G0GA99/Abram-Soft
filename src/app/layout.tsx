@@ -19,11 +19,11 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-// Use Cormorant Garamond for elegant, light, non-bold luxury editorial headings
+// Use Cormorant Garamond for elegant luxury editorial styling
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-luxury",
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
   display: "swap",
 });

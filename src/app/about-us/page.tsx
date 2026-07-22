@@ -153,7 +153,10 @@ export default function AboutPage() {
             <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-4 tracking-tight">
               A team of <span className="text-gradient">creative thinkers</span>
             </h1>
-            <p className="font-luxury italic text-[20px] leading-relaxed font-normal text-[var(--muted)] max-w-[587px] w-full mx-auto">
+            <p 
+              style={{ fontFamily: 'var(--font-luxury), "Cormorant Garamond", Georgia, serif', fontStyle: 'italic' }} 
+              className="text-[19px] leading-relaxed font-normal text-[var(--muted)] max-w-[587px] w-full mx-auto"
+            >
               We are a digital solutions studio crafting modern software, web experiences, 
               and strategic engineering solutions for growing enterprises.
             </p>
