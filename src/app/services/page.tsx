@@ -27,7 +27,10 @@ export default function ServicesPage() {
             <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--foreground)] mb-6">
               What We <span className="text-gradient">Deliver</span>
             </h1>
-            <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
+            <p 
+              style={{ fontFamily: 'var(--font-luxury), "Cormorant Garamond", Georgia, serif', fontStyle: 'italic' }} 
+              className="text-[27px] leading-relaxed font-normal text-[var(--muted)] max-w-2xl mx-auto"
+            >
               Comprehensive full-scale design, development, and growth solutions 
               custom-crafted to take your brand from concept to global leader.
             </p>
