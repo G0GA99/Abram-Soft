@@ -33,37 +33,45 @@ const projects = [
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative"
+      transition={{ duration: 0.4, delay: index * 0.08 }}
+      className="group relative h-full"
     >
-      <Link href={project.href} className="block">
-        <div className="glass-card overflow-hidden p-5 sm:p-6 transition-all duration-300">
-          {/* Image Container */}
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl mb-5 bg-gradient-brand/10 border border-[var(--glass-border)] flex items-center justify-center group-hover:border-[var(--primary)]/40 transition-colors">
-            <div className="text-center p-4">
-              <div className="h-14 w-14 sm:h-16 sm:w-16 mx-auto rounded-2xl bg-[var(--primary)]/15 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                <ExternalLink className="h-6 w-6 sm:h-7 sm:w-7 text-[var(--primary)]" />
-              </div>
-              <span className="font-mono text-xs text-[var(--muted)] tracking-wider uppercase">Case Study</span>
-            </div>
-          </div>
-
-          {/* Content Details */}
+      <Link href={project.href} className="block h-full">
+        <div className="glass-card p-5 sm:p-6 rounded-2xl border border-[var(--glass-border)] hover:border-[var(--primary)]/30 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between">
           <div>
-            <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-[var(--primary)]/15 text-[var(--primary)] mb-3">
+            {/* Visual Header / Thumbnail Box */}
+            <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-5 bg-gradient-to-br from-[var(--primary)]/10 via-black/40 to-black/60 border border-white/10 flex items-center justify-center group-hover:border-[var(--primary)]/40 transition-all duration-300">
+              <div className="h-11 w-11 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:border-[var(--primary)]/50 transition-all duration-300">
+                <ExternalLink className="h-5 w-5 text-[var(--primary)]" />
+              </div>
+              <div className="absolute top-3 right-3 h-7 w-7 rounded-lg bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <ArrowUpRight className="h-3.5 w-3.5 text-white" />
+              </div>
+            </div>
+
+            {/* Category Badge */}
+            <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[var(--primary)]/10 border border-[var(--primary)]/20 text-[var(--primary)] mb-3">
               {project.category}
             </span>
-            <h3 className="font-display text-xl font-bold text-[var(--foreground)] mb-2 group-hover:text-[var(--primary)] transition-colors">
+
+            {/* Title */}
+            <h3 className="font-display text-lg font-bold text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-300 mb-2">
               {project.title}
             </h3>
-            <p className="text-sm text-[var(--muted)] mb-4 line-clamp-2 leading-relaxed">{project.description}</p>
-            <div className="flex items-center gap-1.5 text-[var(--primary)] font-semibold text-sm group-hover:translate-x-1 transition-transform">
-              <span>View Case Study</span>
-              <ArrowUpRight className="h-4 w-4" />
-            </div>
+
+            {/* Description */}
+            <p className="text-xs text-[var(--muted)] leading-relaxed mb-4 line-clamp-3">
+              {project.description}
+            </p>
+          </div>
+
+          {/* Action Link */}
+          <div className="pt-3 border-t border-white/5 flex items-center gap-1.5 text-xs font-semibold text-[var(--primary)] group-hover:translate-x-1 transition-all duration-300">
+            <span>View Case Study</span>
+            <ArrowUpRight className="h-3.5 w-3.5" />
           </div>
         </div>
       </Link>

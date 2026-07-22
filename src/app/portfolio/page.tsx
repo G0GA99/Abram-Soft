@@ -4,117 +4,127 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/sections/footer";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Sparkles, FolderKanban } from "lucide-react";
 
 const projects = [
   {
     title: "MAQTechs",
     category: "Web Development",
-    description: "Corporate MAQTechs website built with a strong focus on performance and usability. A modern technology and digital solutions company website designed to represent innovation, reliability, and technical expertise.",
+    description: "Corporate MAQTechs website built with a strong focus on high performance, accessibility, and modern technical architecture.",
     image: "/images/portfolio-maqtechs.jpg",
     href: "/portfolio/maqtechs-web-development",
-    tags: ["React", "Node.js", "Responsive"],
+    tags: ["React", "Next.js", "Tailwind CSS"],
   },
   {
     title: "PUEHS Portal",
     category: "Web Development",
-    description: "Educational portal with modern design and seamless user experience. Designed to streamline administrative processes and enhance communication between students, teachers, and parents.",
+    description: "Educational portal featuring a streamlined dashboard experience for seamless student and administrator workflows.",
     image: "/images/portfolio-puehs.jpg",
     href: "/portfolio/puehs-portal",
-    tags: ["Laravel", "MySQL", "UI/UX"],
+    tags: ["Laravel", "MySQL", "UI/UX Design"],
   },
   {
     title: "QuarterTonez",
-    category: "SEO Case Study",
-    description: "Complete SEO transformation resulting in 300% organic traffic increase. Implemented comprehensive on-page and off-page SEO strategies for a music education platform.",
+    category: "SEO & Growth",
+    description: "Strategic SEO architecture and content engineering resulting in a 300% organic growth boost for a music platform.",
     image: "/images/portfolio-quartertonez.jpg",
     href: "/portfolio/quartertonez-seo",
-    tags: ["SEO", "Content Strategy", "Analytics"],
+    tags: ["SEO Strategy", "Analytics", "Performance"],
   },
 ];
 
 export default function PortfolioPage() {
   return (
-    <main className="relative overflow-x-hidden">
+    <main className="relative overflow-x-hidden min-h-screen">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16">
+      <section className="pt-32 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-[var(--foreground)] mb-6">
-              Our <span className="text-gradient">Portfolio</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass mb-5 border border-white/10">
+              <Sparkles className="h-3.5 w-3.5 text-[var(--primary)]" />
+              <span className="text-xs text-[var(--muted)] font-medium">Selected Works</span>
+            </div>
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--foreground)] mb-4 tracking-tight">
+              Featured <span className="text-gradient">Portfolio</span>
             </h1>
-            <p className="text-lg text-[var(--muted)] max-w-2xl mx-auto">
-              Explore our latest projects and see how we&apos;ve helped businesses 
-              transform their digital presence.
+            <p 
+              style={{ fontFamily: 'var(--font-luxury), "Cormorant Garamond", Georgia, serif', fontStyle: 'italic' }} 
+              className="text-[19px] leading-relaxed font-normal text-[var(--muted)] max-w-[587px] w-full mx-auto"
+            >
+              Explore our software engineering, web portals, and growth case studies crafted with digital precision.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Projects Grid */}
-      <section className="py-16">
+      <section className="py-10 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
               >
-                <Link href={project.href}>
-                  <Card className="group h-full overflow-hidden">
-                    {/* Image Placeholder */}
-                    <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-[var(--primary)]/10 to-[var(--secondary)]/10">
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="h-20 w-20 rounded-2xl bg-gradient-brand/20 flex items-center justify-center">
-                          <ExternalLink className="h-8 w-8 text-[var(--primary)]" />
+                <Link href={project.href} className="block h-full group">
+                  <div className="glass-card p-5 sm:p-6 rounded-2xl border border-[var(--glass-border)] hover:border-[var(--primary)]/30 hover:-translate-y-1 transition-all duration-300 h-full flex flex-col justify-between">
+                    <div>
+                      {/* Visual Header / Thumbnail Box */}
+                      <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-5 bg-gradient-to-br from-[var(--primary)]/10 via-black/40 to-black/60 border border-white/10 flex items-center justify-center group-hover:border-[var(--primary)]/40 transition-all duration-300">
+                        <div className="h-11 w-11 rounded-xl bg-black/60 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:border-[var(--primary)]/50 transition-all duration-300">
+                          <FolderKanban className="h-5 w-5 text-[var(--primary)]" />
+                        </div>
+                        <div className="absolute top-3 right-3 h-7 w-7 rounded-lg bg-black/50 backdrop-blur-md border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <ExternalLink className="h-3.5 w-3.5 text-white" />
                         </div>
                       </div>
-                      {/* Hover overlay */}
-                      <div className="absolute inset-0 bg-gradient-brand/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                      {/* Category Badge */}
+                      <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-[var(--primary)]/10 border border-[var(--primary)]/20 text-[var(--primary)] mb-3">
+                        {project.category}
+                      </span>
+
+                      {/* Title */}
+                      <h3 className="font-display text-lg font-bold text-[var(--foreground)] group-hover:text-[var(--primary)] transition-colors duration-300 mb-2">
+                        {project.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-xs text-[var(--muted)] leading-relaxed mb-4 line-clamp-3">
+                        {project.description}
+                      </p>
                     </div>
 
-                    <CardHeader>
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-[var(--primary)]/10 text-[var(--primary)]">
-                          {project.category}
-                        </span>
-                      </div>
-                      <CardTitle className="group-hover:text-gradient transition-all">
-                        {project.title}
-                      </CardTitle>
-                      <CardDescription className="text-base mt-2">
-                        {project.description}
-                      </CardDescription>
-                    </CardHeader>
-
-                    <CardContent>
-                      <div className="flex flex-wrap gap-2 mb-4">
+                    <div>
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1.5 mb-4">
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-3 py-1 rounded-full text-xs bg-[var(--glass)] text-[var(--muted)]"
+                            className="px-2.5 py-0.5 rounded-md text-[10px] font-medium bg-white/5 border border-white/10 text-[var(--muted)]"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
-                      <div className="flex items-center gap-2 text-[var(--primary)] font-medium text-sm group-hover:gap-3 transition-all">
+
+                      {/* Action Link */}
+                      <div className="pt-3 border-t border-white/5 flex items-center gap-1.5 text-xs font-semibold text-[var(--primary)] group-hover:translate-x-1 transition-all duration-300">
                         <span>View Case Study</span>
-                        <ArrowRight className="h-4 w-4" />
+                        <ArrowUpRight className="h-3.5 w-3.5" />
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </div>
                 </Link>
               </motion.div>
             ))}
@@ -126,3 +136,4 @@ export default function PortfolioPage() {
     </main>
   );
 }
+
