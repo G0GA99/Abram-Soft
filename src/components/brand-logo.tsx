@@ -14,13 +14,13 @@ interface BrandLogoProps {
 export function BrandLogo({ className, compact = false, light = false, isHeader = false }: BrandLogoProps) {
   return (
     <div
-      className={cn("inline-flex items-center gap-2.5 sm:gap-3 shrink-0", className)}
+      className={cn("inline-flex items-center gap-2 shrink-0", className)}
       aria-label="AbramSoft"
     >
       {/* 3D Glassy "A" Monogram */}
       <svg
         aria-hidden="true"
-        className="h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10 shrink-0 filter drop-shadow-[0_4px_12px_rgba(27,176,128,0.25)] transition-all duration-300 group-hover:scale-105"
+        className="h-[38px] w-[38px] sm:h-[42px] sm:w-[42px] md:h-[45px] md:w-[45px] mt-1.5 -mr-3 shrink-0 filter drop-shadow-[0_4px_12px_rgba(27,176,128,0.25)] transition-all duration-300 group-hover:scale-105"
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +107,7 @@ export function BrandLogo({ className, compact = false, light = false, isHeader 
             </span>
           </span>
           <span className={cn(
-            "text-[7px] sm:text-[8px] md:text-[8.5px] font-mono tracking-[0.16em] sm:tracking-[0.2em] uppercase mt-1 leading-none font-medium",
+            "text-[7px] sm:text-[7.5px] md:text-[8px] font-mono tracking-[0.02em] sm:tracking-[0.04em] uppercase -mt-[5px] leading-none font-semibold whitespace-nowrap block",
             light ? "text-white/60" : "text-[var(--foreground)]/60"
           )}>
             CRAFTING DIGITAL EXCELLENCE

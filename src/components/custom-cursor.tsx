@@ -87,7 +87,7 @@ export function CustomCursor() {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-[9999] overflow-hidden hidden md:block">
-      {/* Outer Smooth Trailing Ring */}
+      {/* Single Smooth Precision Dot */}
       <motion.div
         style={{
           x: smoothX,
@@ -96,48 +96,15 @@ export function CustomCursor() {
           translateY: "-50%",
         }}
         animate={{
-          scale: isHovered ? 1.8 : isClicked ? 0.8 : 1,
-          opacity: isHovered ? 0.8 : 0.4,
-          borderColor: isHovered ? "var(--secondary)" : "var(--primary)",
-        }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="absolute w-8 h-8 rounded-full border border-[var(--primary)] pointer-events-none backdrop-blur-[1px]"
-      />
-
-      {/* Inner Precision Dot */}
-      <motion.div
-        style={{
-          x: rawX,
-          y: rawY,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-        animate={{
-          scale: isHovered ? 1.5 : isClicked ? 0.6 : 1,
+          scale: isHovered ? 1.6 : isClicked ? 0.75 : 1,
           backgroundColor: isHovered ? "var(--secondary)" : "var(--primary)",
           boxShadow: isHovered
-            ? "0 0 16px var(--secondary)"
-            : "0 0 10px var(--primary)",
+            ? "0 0 6px var(--secondary)"
+            : "0 0 3px var(--primary)",
         }}
-        transition={{ type: "spring", stiffness: 500, damping: 28 }}
+        transition={{ type: "spring", stiffness: 400, damping: 25 }}
         className="absolute w-2.5 h-2.5 rounded-full pointer-events-none"
       />
-
-      {/* Click Pulse Ripple */}
-      {isClicked && (
-        <motion.div
-          style={{
-            x: rawX,
-            y: rawY,
-            translateX: "-50%",
-            translateY: "-50%",
-          }}
-          initial={{ scale: 0.6, opacity: 0.8 }}
-          animate={{ scale: 2.8, opacity: 0 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-          className="absolute w-8 h-8 rounded-full border-2 border-[var(--primary)] pointer-events-none"
-        />
-      )}
     </div>
   );
 }

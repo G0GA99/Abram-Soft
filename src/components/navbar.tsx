@@ -89,7 +89,7 @@ export function Navbar() {
             className={cn(
               "flex items-center justify-between transition-all duration-300 rounded-full px-3.5 sm:px-5 mx-auto h-[60px] w-full max-w-[850px]",
               isScrolled
-                ? "glass shadow-xl py-1.5 border border-[var(--glass-border)] bg-[var(--background)]/80 backdrop-blur-md"
+                ? "glass shadow-2xl py-1.5 border border-[var(--glass-border)] bg-[var(--background)]/75 backdrop-blur-xl"
                 : "py-2 bg-transparent border border-transparent"
             )}
           >
